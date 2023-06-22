@@ -10,14 +10,15 @@ class HeadingForm extends Component {
   handleUpdate(e) {
     this.props.update({[e.target.name]: e.target.value});
   }
-  
+
   render() {
+    const [name, email, phone, location] = this.props.defaults;
     return (
       <form>
-        <input onInput={this.handleUpdate} type="text" placeholder="John Appleseed" key="name" name="name"/>
-        <input onInput={this.handleUpdate} type="text" placeholder="j.appleseed@apple.com" key="email" name="email"/>
-        <input onInput={this.handleUpdate} type="text" placeholder="0800 00 1066" key="phone" name="phone"/>
-        <input onInput={this.handleUpdate} type="text" placeholder="Las Vegas, NV" key="location" name="location"/>
+        <input onInput={this.handleUpdate} type="text" defaultValue={name} key="name" name="name"/>
+        <input onInput={this.handleUpdate} type="text" defaultValue={email} key="email" name="email"/>
+        <input onInput={this.handleUpdate} type="text" defaultValue={phone} key="phone" name="phone"/>
+        <input onInput={this.handleUpdate} type="text" defaultValue={location} key="location" name="location"/>
       </form>
     )
   }

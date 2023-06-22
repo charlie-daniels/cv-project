@@ -9,10 +9,10 @@ class App extends Component {
     this.update = this.update.bind(this);
 
     this.state = {
-      name: '',
-      email: '',
-      phone: '',
-      location: '',
+      name: 'John Appleseed',
+      email: 'j.appleseed@apple.com',
+      phone: '0773 457 1263',
+      location: 'London, UK',
     }
   }
 
@@ -21,10 +21,12 @@ class App extends Component {
   }
   
   render() {
+    const state = this.state;
+    const heading = [state.name, state.email, state.phone, state.location];
     return (
     <div className="App">
-      <HeadingForm update={this.update}/>
-      <Heading info={[this.state.name, this.state.email, this.state.phone, this.state.location]}/>
+      <HeadingForm update={this.update} defaults={heading}/>
+      <Heading info={heading}/>
     </div>
   );}
 }
