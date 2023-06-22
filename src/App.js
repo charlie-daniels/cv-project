@@ -18,26 +18,33 @@ class App extends Component {
     }
   }
 
-  update(obj) {
-    this.setState(obj);
+  update(key, val, sectionName) {
+    this.setState(prevState => ({
+      [sectionName]: {
+        ...prevState[sectionName],
+        [key]: val,
+      }
+    }));
   }
   
   render() {
     const heading = this.state.heading;
     return (
-    <div className="App">
-      <Form
-        update={this.update}
-        fields={[
-          {name: 'name', default: heading.name},
-          {name: 'email', default: heading.email},
-          {name: 'phone', default: heading.phone},
-          {name: 'location', default: heading.location},
-        ]}
-      />
-      <Heading info={this.state.heading}/>
-    </div>
-  );}
+      <div className="App">
+        <Form
+          update={this.update}
+          fields={[
+            {name: 'name', default: heading.name},
+            {name: 'email', default: heading.email},
+            {name: 'phone', default: heading.phone},
+            {name: 'location', default: heading.location},
+          ]}
+          name='heading'
+        />
+        <Heading info={this.state.heading}/>
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -8,7 +8,7 @@ class Form extends Component {
   }
 
   handleUpdate(e) {
-    this.props.update({[e.target.name]: e.target.value});
+    this.props.update(e.target.name, e.target.value, this.props.name);
   }
 
   render() {
