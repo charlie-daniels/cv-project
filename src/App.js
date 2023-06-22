@@ -1,6 +1,6 @@
 import { Component } from "react";
-import Heading from "./components/preview/Heading";
-import Form from "./components/form/Form";
+import Heading from "./components/Heading";
+import Form from "./components/Form";
 
 class App extends Component {
   constructor() {
