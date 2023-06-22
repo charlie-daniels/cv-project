@@ -6,10 +6,11 @@ class Heading extends Component {
   }
 
   render() {
+    console.log(Object.values(this.props.info))
     return (
       <>
-        {this.props.info.map((i) => {
-          return (<h1>{i}</h1>)
+        {Object.values(this.props.info).map((val) => {
+          return (<h1>{val}</h1>)
         })}
       </>
     )
