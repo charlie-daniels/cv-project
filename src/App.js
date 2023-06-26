@@ -33,12 +33,7 @@ class App extends Component {
       <div className="App">
         <Form
           update={this.update}
-          fields={[
-            {name: 'name', default: heading.name},
-            {name: 'email', default: heading.email},
-            {name: 'phone', default: heading.phone},
-            {name: 'location', default: heading.location},
-          ]}
+          fields={heading}
           name='heading'
         />
         <Heading info={this.state.heading}/>

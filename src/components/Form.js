@@ -14,14 +14,14 @@ class Form extends Component {
   render() {
     return (
       <form>
-        {this.props.fields.map((field) => {
+        {Object.keys(this.props.fields).map((key) => {
           return (
             <input 
               onInput={this.handleUpdate} 
               type="text" 
-              defaultValue={field.default} 
-              key={field.name} 
-              name={field.name} 
+              defaultValue={this.props.fields[key]} 
+              key={key} 
+              name={key} 
             />
           )
         })}
